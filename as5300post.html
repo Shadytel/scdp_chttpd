@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cisco AS5300 series configuration options</title>
+</head>
+<body>
+  <form id="myForm" action="as5300config" method="post">
+    <label for="ipaddr">Enter the unit's IP address:</label>
+    <input type="text" id="ipaddr" name="ipaddr"><br><br>
+
+    <label for="nataddr">Enter the unit's external IP address if behind a NAT (leave blank if unnecessary):</label>
+    <input type="text" id="nataddr" name="nataddr"><br><br>
+
+    <label for="gateway">Enter the default gateway IP address:</label>
+    <input type="text" id="gateway" name="gateway"><br><br>
+
+    <label for="nxx">Enter your prefix:</label>
+    <input type="text" id="nxx" name="nxx"><br><br>
+
+    <label for="annc">Would you like to generate a verification announcement? </label>
+    <select name="annc" id="annc">
+      <option value="y">Yes</option>
+      <option value="n">No</option>
+    </select><br><br>
+
+    <p>Note: AS5300 FXS ports are only available as loop start T1 channels. Please have a channel bank or other other device to supply the subscriber loop interface.</p>
+    <label for="fxs">Enter the number of FXS ports to provision:</label>
+    <select name="fxs" id="fxs">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+    </select><br><br>
+
+    <label for="fxsslot">Enter the logical T1 port for the FXS span:</label>
+    <input type="text" id="fxsslot" name="fxsslot"><br><br>
+
+    <label for="fxsport">Enter the starting timeslot for the FXS span:</label>
+    <input type="text" id="fxsport" name="fxsport"><br><br>
+
+    <label for="t1framing">Enter the T1 framing type to use on the FXS span:</label>
+    <select name="t1framing" id="t1framing">
+      <option value="esf">Extended Superframe</option>
+      <option value="sf">Superframe</option>
+    </select><br><br>
+
+    <label for="t1linecode">Enter the T1 linecode type to use on the FXS span:</label>
+    <select name="t1linecode" id="t1linecode">
+      <option value="b8zs">B8ZS</option>
+      <option value="ami">AMI</option>
+    </select><br><br>
+
+    <label for="pri">Provision an ISDN PRI to the unit? </label>
+    <select name="pri" id="pri">
+      <option value="y">Yes</option>
+      <option value="n">No</option>
+    </select><br><br>
+
+    <label for="t1port">Enter the logical port for the T1:</label>
+    <input type="text" id="t1port" name="t1port"><br><br>
+
+    <label for="t1timing">Should the router be the timing source for this span? </label>
+    <select name="t1timing" id="t1timing">
+      <option value="n">No</option>
+      <option value="y">Yes</option>
+    </select><br><br>
+
+    <label for="t1len">Enter the T1 cable length:</label>
+    <select name="t1len" id="t1len">
+      <option value="0">0-133 Feet</option>
+      <option value="1">134-266 Feet</option>
+      <option value="2">267-399 Feet</option>
+      <option value="3">400-533 Feet</option>
+      <option value="4">534-655 Feet</option>
+      <option value="11">26 dB loss (long)</option>
+      <option value="12">36 dB loss (very long)</option>
+    </select><br><br>
+
+    <label for="isdnflavor">Select the ISDN flavor being used:</label>
+    <select name="isdnflavor" id="isdnflavor">
+      <option value="ni">National (all variants)</option>
+      <option value="4ess">4ESS</option>
+      <option value="5ess">5ESS</option>
+      <option value="dms100">DMS-100</option>
+      <option value="net5">NET5</option>
+      <option value="qsig">QSIG</option>
+      <option value="ntt">NTT</option>
+      <option value="ts014">TS-014</option>
+    </select><br><br>
+
+    <label for="isdnside">User or network side of the ISDN stack? </label>
+    <select name="isdnside" id="isdnside">
+      <option value="user">User</option>
+      <option value="network">Network</option>
+    </select><br><br>
+
+    <label for="pritb">Which thousand block should terminate to the PRI?</label>
+    <select name="pritb" id="pritb">
+      <option value="0">0xxx</option>
+      <option value="1">1xxx</option>
+      <option value="2">2xxx</option>
+      <option value="3">3xxx</option>
+      <option value="4">4xxx</option>
+      <option value="5">5xxx</option>
+      <option value="6">6xxx</option>
+      <option value="7">7xxx</option>
+      <option value="8">8xxx</option>
+      <option value="9">9xxx</option>
+    </select><br><br>
+
+    <label for="numplan">What numbering plan type should be used for PRI-bound traffic?</label>
+    <select name="numplan" id="numplan">
+      <option value="unknown">Unknown</option>
+      <option value="national">National</option>
+      <option value="isdn">ISDN</option>
+      <option value="data">Data</option>
+      <option value="telex">Telex</option>
+      <option value="privacy">Private</option>
+    </select><br><br>
+
+    <label for="cntyp">What calling number type should be used for PRI-bound traffic?</label>
+    <select name="cntyp" id="cntyp">
+      <option value="unknown">Unknown</option>
+      <option value="subscriber">Subscriber</option>
+      <option value="network">Network</option>
+      <option value="national">National</option>
+      <option value="international">International</option>
+      <option value="abbreviated">Abbreviated</option>
+    </select><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

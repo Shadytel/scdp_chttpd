@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cisco IAD2400 series configuration options</title>
+</head>
+<body>
+  <form id="myForm" action="2400config" method="post">
+    <label for="ipaddr">Enter the unit's IP address:</label>
+    <input type="text" id="ipaddr" name="ipaddr"><br><br>
+
+    <label for="nataddr">Enter the unit's external IP address if behind a NAT (leave blank if unnecessary):</label>
+    <input type="text" id="nataddr" name="nataddr"><br><br>
+
+    <label for="gateway">Enter the default gateway IP address:</label>
+    <input type="text" id="gateway" name="gateway"><br><br>
+
+    <label for="nxx">Enter your prefix:</label>
+    <input type="text" id="nxx" name="nxx"><br><br>
+
+    <label for="annc">Would you like to generate a verification announcement? </label>
+    <select name="annc" id="annc">
+      <option value="y">Yes</option>
+      <option value="n">No</option>
+    </select><br><br>
+
+    <label for="fxs">Enter the number of FXS ports to provision:</label>
+    <select name="fxs" id="fxs">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select><br><br>
+
+    <label for="fxscid">Enable caller ID on FXS ports? </label>
+    <select name="fxscid" id="fxscid">
+      <option value="y">Yes</option>
+      <option value="n">No</option>
+    </select><br><br>
+
+    <label for="fxsslot">Enter the slot for the FXS interface:</label>
+    <input type="text" id="fxsslot" name="fxsslot"><br><br>
+
+    <label for="fxsport">Enter the starting port for the FXS interface:</label>
+    <input type="text" id="fxsslot" name="fxsport"><br><br>
+
+    <label for="fxo">Enter the number of FXO ports to provision:</label>
+    <select name="fxo" id="fxo">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select><br><br>
+
+    <label for="fxoslot">Enter the slot for the FXO interface:</label>
+    <input type="text" id="fxoslot" name="fxoslot"><br><br>
+
+    <label for="fxoport">Enter the starting port for the FXO interface:</label>
+    <input type="text" id="fxoslot" name="fxoport"><br><br>
+
+    <label for="fxocid">Enable caller ID on FXO ports? </label>
+    <select name="fxocid" id="fxocid">
+      <option value="y">Yes</option>
+      <option value="n">No</option>
+    </select><br><br>
+
+    <label for="fxodest">Enter the extension FXO interfaces should ring to:</label>
+    <input type="text" id="fxodest" name="fxodest"><br><br>
+
+    <label for="pri">Provision an ISDN PRI to the unit? </label>
+    <select name="pri" id="pri">
+      <option value="y">Yes</option>
+      <option value="n">No</option>
+    </select><br><br>
+
+    <label for="t1slot">Enter the logical slot for the T1:</label>
+    <input type="text" id="t1slot" name="t1slot"><br><br>
+
+    <label for="t1port">Enter the logical port for the T1:</label>
+    <input type="text" id="t1port" name="t1port"><br><br>
+
+    <label for="t1timing">Should the router be the timing source for this span? </label>
+    <select name="t1timing" id="t1timing">
+      <option value="n">No</option>
+      <option value="y">Yes</option>
+    </select><br><br>
+
+    <label for="t1len">Enter the T1 cable length:</label>
+    <select name="t1len" id="t1len">
+      <option value="0">0-133 Feet</option>
+      <option value="1">134-266 Feet</option>
+      <option value="2">267-399 Feet</option>
+      <option value="3">400-533 Feet</option>
+      <option value="4">534-655 Feet</option>
+      <option value="11">26 dB loss (long)</option>
+      <option value="12">36 dB loss (very long)</option>
+    </select><br><br>
+
+    <label for="isdnflavor">Select the ISDN flavor being used:</label>
+    <select name="isdnflavor" id="isdnflavor">
+      <option value="ni">National (all variants)</option>
+      <option value="4ess">4ESS</option>
+      <option value="5ess">5ESS</option>
+      <option value="dms100">DMS-100</option>
+      <option value="net5">NET5</option>
+      <option value="qsig">QSIG</option>
+      <option value="ntt">NTT</option>
+      <option value="ts014">TS-014</option>
+    </select><br><br>
+
+    <label for="isdnside">User or network side of the ISDN stack? </label>
+    <select name="isdnside" id="isdnside">
+      <option value="user">User</option>
+      <option value="network">Network</option>
+    </select><br><br>
+
+    <label for="pritb">Which thousand block should terminate to the PRI?</label>
+    <select name="pritb" id="pritb">
+      <option value="0">0xxx</option>
+      <option value="1">1xxx</option>
+      <option value="2">2xxx</option>
+      <option value="3">3xxx</option>
+      <option value="4">4xxx</option>
+      <option value="5">5xxx</option>
+      <option value="6">6xxx</option>
+      <option value="7">7xxx</option>
+      <option value="8">8xxx</option>
+      <option value="9">9xxx</option>
+    </select><br><br>
+
+    <label for="numplan">What numbering plan type should be used for PRI-bound traffic?</label>
+    <select name="numplan" id="numplan">
+      <option value="unknown">Unknown</option>
+      <option value="national">National</option>
+      <option value="isdn">ISDN</option>
+      <option value="data">Data</option>
+      <option value="telex">Telex</option>
+      <option value="privacy">Private</option>
+    </select><br><br>
+
+    <label for="cntyp">What calling number type should be used for PRI-bound traffic?</label>
+    <select name="cntyp" id="cntyp">
+      <option value="unknown">Unknown</option>
+      <option value="subscriber">Subscriber</option>
+      <option value="network">Network</option>
+      <option value="national">National</option>
+      <option value="international">International</option>
+      <option value="abbreviated">Abbreviated</option>
+    </select><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
